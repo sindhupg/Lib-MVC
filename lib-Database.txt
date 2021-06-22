@@ -1,0 +1,83 @@
+-----------------------------
+Table librarian
+-----------------------------
+
+name,contact_no
+
+addbook()
+
+
+-----------------------------
+Table user
+-----------------------------
+name,contact_no
+
+reigister()
+login()
+barrowbook()
+
+
+-----------------------------
+Table books
+-----------------------------
+author,
+name, 
+publication company, 
+rented date,
+rented user
+
+
+------------Menu-----------
+
+
+a) add user, add librarian, add books.
+b) update user details, update books details
+c) delete user, delete books
+d) read the books details and list of books available
+e) perform rental operations
+
+
+-------------------------------
+
+
+
+******************************************************
+	SQL queries 
+******************************************************
+create table books( id int primary key auto_increment,
+author varchar(200),
+name varchar(200),
+pub_comp varchar(200)
+);
+
+create table user(
+id int primary key auto_increment,
+name varchar(200),
+contno varchar(10) );
+
+
+create table librarian(
+id int primary key auto_increment,
+name varchar(200),
+contno varchar(10) );
+
+create table trans(
+id int primary key auto_increment,
+rented_date date,
+rented_user varchar(200),
+bookid int,
+FOREIGN KEY (bookid) REFERENCES books(id)
+
+);
+
+
+
+
+
+
+
+
+
+
+
+
